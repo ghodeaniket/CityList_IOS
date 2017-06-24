@@ -13,6 +13,13 @@ struct City{
     let country: String
     let id: Int
     let location: Location
+    
+    init(json: [String: Any]) {
+        name = json["name"] as? String ?? "Unknown City"
+        country = json["country"] as? String ?? "Unknown Country"
+        id = json["_id"] as? Int ?? 0
+        location = Location(json: json["coord"] as! [String : Any])
+    }
 }
 
 //MARK: - Protocols

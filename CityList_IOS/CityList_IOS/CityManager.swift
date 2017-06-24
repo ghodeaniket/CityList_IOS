@@ -9,13 +9,22 @@
 import Foundation
 
 class CityManager {
-    private var cities = [City] ()
+    
+    // private static cities which conforms to Monostate Design pattern since same cities vaiable will be available across the application life cycle
+    
+    private static var cities = [City] ()
     
     func addCity(city: City) {
-        cities.append(city)
+        CityManager.cities.append(city)
+    }
+    
+    func getSortedCities() -> [City]{
+        return CityManager.cities.sorted(by: {
+            return ($0.country, $0.name) < ($1.country, $1.name)
+        })
     }
     
     func cityAtIndex(index: Int) -> City {
-        return cities[index]
+        return CityManager.cities[index]
     }
 }
