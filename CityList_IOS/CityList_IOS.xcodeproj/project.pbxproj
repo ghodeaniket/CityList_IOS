@@ -18,7 +18,7 @@
 		2507003E1EFE4D09003F3D2A /* CityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507003D1EFE4D09003F3D2A /* CityManager.swift */; };
 		2507004A1EFEDD7C003F3D2A /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 250700491EFEDD7C003F3D2A /* cities.json */; };
 		2507004F1EFEDF49003F3D2A /* CityListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507004E1EFEDF49003F3D2A /* CityListDataProvider.swift */; };
-		250700511EFEE3B5003F3D2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700501EFEE3B5003F3D2A /* ViewController.swift */; };
+		250700551EFF9B0A003F3D2A /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 		2507003D1EFE4D09003F3D2A /* CityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityManager.swift; sourceTree = "<group>"; };
 		250700491EFEDD7C003F3D2A /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		2507004E1EFEDF49003F3D2A /* CityListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListDataProvider.swift; sourceTree = "<group>"; };
-		250700501EFEE3B5003F3D2A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 		250700451EFEC1DD003F3D2A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				250700501EFEE3B5003F3D2A /* ViewController.swift */,
+				250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -318,12 +318,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				250700511EFEE3B5003F3D2A /* ViewController.swift in Sources */,
 				250700091EFE4336003F3D2A /* AppDelegate.swift in Sources */,
 				2507003E1EFE4D09003F3D2A /* CityManager.swift in Sources */,
 				2507003C1EFE4C7F003F3D2A /* Location.swift in Sources */,
 				2507003A1EFE4A26003F3D2A /* City.swift in Sources */,
 				2507004F1EFEDF49003F3D2A /* CityListDataProvider.swift in Sources */,
+				250700551EFF9B0A003F3D2A /* CitiesListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
