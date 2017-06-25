@@ -17,6 +17,7 @@ class CitiesListViewController: UIViewController {
     //MARK: - Properties
     
     var searchController: UISearchController!
+    let cityListProvider = CityListDataProvider()
     
     //MARK: - Lifecycle
     
@@ -24,6 +25,14 @@ class CitiesListViewController: UIViewController {
         super.viewDidLoad()
 
         configureSearchController()
+        
+        cityListProvider.loadCitiesFromJSONFile { (error) in
+            if (error == nil) {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     //MARK: - Helpers

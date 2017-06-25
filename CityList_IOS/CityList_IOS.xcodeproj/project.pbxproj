@@ -19,6 +19,7 @@
 		2507004A1EFEDD7C003F3D2A /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 250700491EFEDD7C003F3D2A /* cities.json */; };
 		2507004F1EFEDF49003F3D2A /* CityListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507004E1EFEDF49003F3D2A /* CityListDataProvider.swift */; };
 		250700551EFF9B0A003F3D2A /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */; };
+		250700571EFFB260003F3D2A /* CityListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700561EFFB25F003F3D2A /* CityListDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		250700491EFEDD7C003F3D2A /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		2507004E1EFEDF49003F3D2A /* CityListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListDataProvider.swift; sourceTree = "<group>"; };
 		250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
+		250700561EFFB25F003F3D2A /* CityListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */,
+				250700561EFFB25F003F3D2A /* CityListDataSource.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				2507003E1EFE4D09003F3D2A /* CityManager.swift in Sources */,
 				2507003C1EFE4C7F003F3D2A /* Location.swift in Sources */,
 				2507003A1EFE4A26003F3D2A /* City.swift in Sources */,
+				250700571EFFB260003F3D2A /* CityListDataSource.swift in Sources */,
 				2507004F1EFEDF49003F3D2A /* CityListDataProvider.swift in Sources */,
 				250700551EFF9B0A003F3D2A /* CitiesListViewController.swift in Sources */,
 			);
