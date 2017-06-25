@@ -46,7 +46,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="tXn-Wn-JUQ" id="SMP-US-FSd"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="e6A-O3-rnR"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -64,7 +64,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="tXn-Wn-JUQ" customClass="CityListDataSource" customModule="CityList_IOS" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1208.8" y="-567.16641679160421"/>
         </scene>
@@ -73,9 +72,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dIA-0N-yFT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2dS-4u-DUP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2dS-4u-DUP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.81429958339999997" green="0.2151675522" blue="0.1744245291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

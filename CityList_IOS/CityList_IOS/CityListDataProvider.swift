@@ -23,6 +23,8 @@ class CityListDataProvider: NSObject {
     
     let cityManager = CityManager()
     
+    // Parsing JSON to City objects for fast enumeration for tableview (Display) and fast searching with the help of NSPredicate
+    
     func loadCitiesFromJSONFile(completion: @escaping (Error?) -> Void) {
         
         DispatchQueue.global(qos: .userInitiated).async {

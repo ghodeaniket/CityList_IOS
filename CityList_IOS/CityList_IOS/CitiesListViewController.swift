@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: - UIViewController
+
 class CitiesListViewController: UIViewController {
 
     //MARK: - IBOutlets
@@ -19,13 +21,16 @@ class CitiesListViewController: UIViewController {
     var searchController: UISearchController!
     let cityListProvider = CityListDataProvider()
     
+    let cityManager = CityManager()
+    let cellIdentifier = "cities"
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureSearchController()
-        
+                
         cityListProvider.loadCitiesFromJSONFile { (error) in
             if (error == nil) {
                 DispatchQueue.main.async {
@@ -40,8 +45,53 @@ class CitiesListViewController: UIViewController {
     func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchResultsUpdater = self
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
 
+}
+
+//MARK: - UITableViewDataSource
+
+extension CitiesListViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var isFilterEnabled = false
+        if let searchText = searchController.searchBar.text {
+            if !searchText.isEmpty {
+                isFilterEnabled = true
+            }
+        }
+        return cityManager.getCitiesCount(isFilterEnabled: isFilterEnabled)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        var isFilterEnabled = false
+        if let searchText = searchController.searchBar.text {
+            if !searchText.isEmpty {
+                isFilterEnabled = true
+            }
+        }
+        
+        let city = cityManager.cityAtIndex(index: indexPath.row, isFilterEnabled: isFilterEnabled)
+        cell.textLabel?.text = "\(city.name), \(city.country)"
+        return cell
+    }
+}
+
+//MARK: - UITableViewDataSource
+
+extension CitiesListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            if !searchText.isEmpty {
+                cityManager.filterCityList(searchText: searchText)
+                tableView.reloadData()
+            }
+            
+        }
+        
+    }
 }
