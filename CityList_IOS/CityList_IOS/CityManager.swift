@@ -18,13 +18,19 @@ class CityManager {
         CityManager.cities.append(city)
     }
     
-    func getSortedCities() -> [City]{
-        return CityManager.cities.sorted(by: {
-            return ($0.country, $0.name) < ($1.country, $1.name)
-        })
+    func getCitiesCount() -> Int {
+        return CityManager.cities.count
     }
     
     func cityAtIndex(index: Int) -> City {
         return CityManager.cities[index]
+    }
+    
+    // Sort cities list by cities, country
+    
+    func sortCitiesList() {
+        CityManager.cities.sort(by: {
+            return ($0.country, $0.name) < ($1.country, $1.name)
+        })
     }
 }

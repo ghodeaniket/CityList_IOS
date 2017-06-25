@@ -54,6 +54,7 @@ class CityListDataProvider: NSObject {
                     self.cityManager.addCity(city: city)
                 }
             }
+            self.cityManager.sortCitiesList()
             completion(nil)
         }
         

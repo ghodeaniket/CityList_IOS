@@ -14,7 +14,7 @@ class CityListDataSource: NSObject, UITableViewDataSource {
     let cellIdentifier = "cities"
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityManager.getSortedCities().count
+        return cityManager.getCitiesCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
