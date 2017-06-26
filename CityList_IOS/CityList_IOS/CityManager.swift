@@ -44,6 +44,13 @@ class CityManager {
         print(CityManager.filteredCities.count)
     }
     
+    // Helper function for unit testing to reset the 'System Under Test'
+    
+    func removeAllCities() {
+        CityManager.cities.removeAll()
+        CityManager.filteredCities.removeAll()
+    }
+    
     // Sort cities list by cities, country
     
     func sortCitiesList() {

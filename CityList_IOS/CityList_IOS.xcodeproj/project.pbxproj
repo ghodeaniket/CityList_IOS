@@ -19,6 +19,7 @@
 		2507004A1EFEDD7C003F3D2A /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 250700491EFEDD7C003F3D2A /* cities.json */; };
 		2507004F1EFEDF49003F3D2A /* CityListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507004E1EFEDF49003F3D2A /* CityListDataProvider.swift */; };
 		250700551EFF9B0A003F3D2A /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */; };
+		250700651F00B87A003F3D2A /* CityManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700641F00B87A003F3D2A /* CityManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		250700491EFEDD7C003F3D2A /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		2507004E1EFEDF49003F3D2A /* CityListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListDataProvider.swift; sourceTree = "<group>"; };
 		250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
+		250700641F00B87A003F3D2A /* CityManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				2507001D1EFE4337003F3D2A /* CityList_IOSTests.swift */,
 				2507001F1EFE4337003F3D2A /* Info.plist */,
+				250700641F00B87A003F3D2A /* CityManagerTests.swift */,
 			);
 			path = CityList_IOSTests;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250700651F00B87A003F3D2A /* CityManagerTests.swift in Sources */,
 				2507001E1EFE4337003F3D2A /* CityList_IOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
