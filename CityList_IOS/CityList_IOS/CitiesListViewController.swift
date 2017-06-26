@@ -61,7 +61,11 @@ extension CitiesListViewController: UITableViewDataSource {
         if let searchText = searchController.searchBar.text {
             if !searchText.isEmpty {
                 isFilterEnabled = true
+            } else {
+                isFilterEnabled = false
             }
+        }else {
+            isFilterEnabled = false
         }
         return cityManager.getCitiesCount(isFilterEnabled: isFilterEnabled)
     }
@@ -73,9 +77,15 @@ extension CitiesListViewController: UITableViewDataSource {
             if !searchText.isEmpty {
                 isFilterEnabled = true
             }
+            else {
+                isFilterEnabled = false
+            }
+        } else {
+            isFilterEnabled = false
         }
         
         let city = cityManager.cityAtIndex(index: indexPath.row, isFilterEnabled: isFilterEnabled)
+        
         cell.textLabel?.text = "\(city.name), \(city.country)"
         return cell
     }
@@ -88,8 +98,11 @@ extension CitiesListViewController: UISearchResultsUpdating {
         if let searchText = searchController.searchBar.text {
             if !searchText.isEmpty {
                 cityManager.filterCityList(searchText: searchText)
-                tableView.reloadData()
             }
+            
+            // Reload TableView everytime there is update in Searchbar to get updates when there is text in searchbar, but also get update when text is cleared.
+            
+            tableView.reloadData()
             
         }
         
