@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Class responsible for fetching the data from JSON and passing the data to CityManager
+
 class CityListDataProvider: NSObject {
     
     //MARK: - Aliases
@@ -24,12 +26,16 @@ class CityListDataProvider: NSObject {
     let cityManager = CityManager()
     
     // Parsing JSON to City objects for fast enumeration for tableview (Display) and fast searching with the help of NSPredicate
+
+    // I thought of Parsing JSON into hashable dictionary, but found out that parsing this huge JSON into hashable dictionary is time consuming 
+    // And combination of array for displaying list of cities and filtering in with NSPredicate is fast.
     
     func loadCitiesFromJSONFile(completion: @escaping (Error?) -> Void) {
         
         DispatchQueue.global(qos: .userInitiated).async {
             // read the json file
             
+            // Create Error object with errorString
             func sendError(errorMessage: String) {
                 let userInfo = [NSLocalizedDescriptionKey : errorMessage]
                 completion(NSError(domain: "JSON Parsing", code: 1, userInfo: userInfo))

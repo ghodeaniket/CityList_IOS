@@ -30,11 +30,17 @@ class CitiesListViewController: UIViewController {
         super.viewDidLoad()
 
         configureSearchController()
-                
+        
+        // Show activity indicator when cities.json is being parsed 
+        
+        ActivityIndicator.sharedInstance().startActivityIndicator(self)
         cityListProvider.loadCitiesFromJSONFile { (error) in
-            if (error == nil) {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                ActivityIndicator.sharedInstance().stopActivityIndicator(self)
+                if (error == nil) {
                     self.tableView.reloadData()
+                } else {
+                    self.displayError(error!.localizedDescription)
                 }
             }
         }
@@ -42,12 +48,21 @@ class CitiesListViewController: UIViewController {
     
     //MARK: - Helpers
     
+    // Configure the UISearchController
     func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    // display an error if something goes wrong
+    fileprivate func displayError(_ errorString: String?) {
+        
+        let alertController = UIAlertController(title: "Error", message: errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

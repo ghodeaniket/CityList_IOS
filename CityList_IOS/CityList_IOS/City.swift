@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Structure to hold the information for city from cities.json
+
 struct City{
     let name: String
     let country: String

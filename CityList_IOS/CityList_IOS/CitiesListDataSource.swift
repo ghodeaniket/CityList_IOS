@@ -25,6 +25,9 @@ extension CitiesListViewController: UITableViewDataSource {
         return cell
     }
     
+    // helper function to check if text is present in searchbar or not.
+    // Based on this the datasource can decide whether to use filtered cities or not.
+    
     func isFilterEnabled() -> Bool {
         if let searchText = searchController.searchBar.text {
             if !searchText.isEmpty {

@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Structure to hold information about location of cities
+
 struct Location {
     let longitude: Double
     let latitude: Double

@@ -8,12 +8,17 @@
 
 import Foundation
 
+// Common access point for getting the cities information to display and search.
+// The reason I followed Monostate over Singleton because it solves the issue of singular nature of class which is transparent to user of this class.
+
 class CityManager {
     
     // private static cities which conforms to Monostate Design pattern since same cities vaiable will be available across the application life cycle
     
     private static var cities = [City] ()
     private static var filteredCities = [City] ()
+    
+    // Helper function to add City to cities array
     
     func addCity(city: City) {
         CityManager.cities.append(city)
@@ -34,6 +39,8 @@ class CityManager {
         }
         return CityManager.cities[index]
     }
+    
+    // Helper function to filter list of cities based on whether city name starts with search string or not.
     
     func filterCityList(searchText: String) {
         

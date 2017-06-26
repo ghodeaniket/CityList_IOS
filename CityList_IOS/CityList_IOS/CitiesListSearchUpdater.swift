@@ -13,6 +13,8 @@ import UIKit
 extension CitiesListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
+            
+            // check if searchtext is empty or not
             if !searchText.isEmpty {
                 cityManager.filterCityList(searchText: searchText)
             }
