@@ -20,6 +20,10 @@
 		2507004F1EFEDF49003F3D2A /* CityListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507004E1EFEDF49003F3D2A /* CityListDataProvider.swift */; };
 		250700551EFF9B0A003F3D2A /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */; };
 		250700651F00B87A003F3D2A /* CityManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700641F00B87A003F3D2A /* CityManagerTests.swift */; };
+		250700671F00C902003F3D2A /* CitiesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700661F00C901003F3D2A /* CitiesListDataSource.swift */; };
+		250700691F00C949003F3D2A /* CitiesListSearchUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250700681F00C949003F3D2A /* CitiesListSearchUpdater.swift */; };
+		2507006B1F00C98B003F3D2A /* CitiesListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2507006A1F00C98B003F3D2A /* CitiesListTableViewDelegate.swift */; };
+		2507006E1F00C9F1003F3D2A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2507006D1F00C9F1003F3D2A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		2507004E1EFEDF49003F3D2A /* CityListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListDataProvider.swift; sourceTree = "<group>"; };
 		250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
 		250700641F00B87A003F3D2A /* CityManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityManagerTests.swift; sourceTree = "<group>"; };
+		250700661F00C901003F3D2A /* CitiesListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesListDataSource.swift; sourceTree = "<group>"; };
+		250700681F00C949003F3D2A /* CitiesListSearchUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesListSearchUpdater.swift; sourceTree = "<group>"; };
+		2507006A1F00C98B003F3D2A /* CitiesListTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesListTableViewDelegate.swift; sourceTree = "<group>"; };
+		2507006D1F00C9F1003F3D2A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2507006E1F00C9F1003F3D2A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				250700541EFF9B0A003F3D2A /* CitiesListViewController.swift */,
+				250700661F00C901003F3D2A /* CitiesListDataSource.swift */,
+				250700681F00C949003F3D2A /* CitiesListSearchUpdater.swift */,
+				2507006A1F00C98B003F3D2A /* CitiesListTableViewDelegate.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +185,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		2507006C1F00C9F1003F3D2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2507006D1F00C9F1003F3D2A /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2507FFFC1EFE4336003F3D2A = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +200,7 @@
 				2507001C1EFE4337003F3D2A /* CityList_IOSTests */,
 				250700271EFE4337003F3D2A /* CityList_IOSUITests */,
 				250700061EFE4336003F3D2A /* Products */,
+				2507006C1F00C9F1003F3D2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,6 +274,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 7M848FL347;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					250700181EFE4337003F3D2A = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -321,6 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250700691F00C949003F3D2A /* CitiesListSearchUpdater.swift in Sources */,
+				2507006B1F00C98B003F3D2A /* CitiesListTableViewDelegate.swift in Sources */,
+				250700671F00C902003F3D2A /* CitiesListDataSource.swift in Sources */,
 				250700091EFE4336003F3D2A /* AppDelegate.swift in Sources */,
 				2507003E1EFE4D09003F3D2A /* CityManager.swift in Sources */,
 				2507003C1EFE4C7F003F3D2A /* Location.swift in Sources */,
